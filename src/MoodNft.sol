@@ -43,7 +43,7 @@ contract MoodNft is ERC721 {
     // Função para alterar o humor do NFT (somente o owner do NFT pode fazer isso)
     function flipMood(uint256 tokenId) public {
         // Verifica se quem chamou a função é o dono do token
-        if(!_isAuthorized(msg.sender, msg.sender, tokenId)){
+        if (!_isAuthorized(msg.sender, msg.sender, tokenId)) {
             revert MoodNft__CantFlipMoodIfNotOwner();
         }
 
@@ -54,7 +54,6 @@ contract MoodNft is ERC721 {
             s_tokenIdToMood[tokenId] = Mood.HAPPY;
         }
     }
-    
 
     function _baseURI() internal pure override returns (string memory) {
         return "data:application/json;base64,";
@@ -83,10 +82,9 @@ contract MoodNft is ERC721 {
                             abi.encodePacked( // transformamos em um objeto bytes
                                 '{"name": "',
                                 name(),
-                                '", description: "An NFT that reflects your mood!", "attributes": [{"trait_type": "Mood", "value": 100}], "image": ',
+                                '", "description": "An NFT that reflects your mood!", "attributes": [{"trait_type": "Mood", "value": "100"}], "image": "',
                                 imageURI,
                                 '"}'
-                                // {"name": "Mood NFT"}
                             )
                         )
                     )
