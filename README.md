@@ -24,8 +24,6 @@ O objetivo é demonstrar, de forma direta, o fluxo completo de criação, mintag
 ---
 
 ## 📂 Estrutura do Projeto
-
-
 mood-nft-collection/
 ├── images/        # Assets da coleção
 ├── src/           # Smart contract principal
